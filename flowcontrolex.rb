@@ -61,11 +61,12 @@ end
 #Leap Year
 
 puts 'Enter starting year'
-syear = gets.chomp.to_f
+syear = gets.chomp.to_i
 puts 'Enter ending year'
-eyear = gets.chomp.to_f
+eyear = gets.chomp.to_i
 (syear..eyear).step(1) do|n|
-	if n.remainder(4)==0 || n.remainder(400)==0
+	if (n.remainder(4) == 0 && n.remainder(100) != 0) || (n.remainder(100) == 0 && n.remainder(400) == 0)
 		puts n.to_s + ' is a Leap Year'
+	
 	end
 end
